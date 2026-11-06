@@ -1,0 +1,30 @@
+/* Motion layer recreating the source site's animations without blur effects. */
+.im-reveal { opacity: 0; transform: translateY(32px); transition: opacity .9s cubic-bezier(.22,1,.36,1) var(--im-delay,0ms), transform .9s cubic-bezier(.22,1,.36,1) var(--im-delay,0ms); }
+.im-reveal.im-in { opacity: 1; transform: none; }
+.im-hero { animation: im-rise 1s cubic-bezier(.22,1,.36,1) var(--im-delay,0ms) both; }
+@keyframes im-rise { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+.im-kenburns { animation: im-zoom 6s ease-out both; }
+.import-hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% center; opacity: 0; transition: opacity .8s ease; }
+@keyframes im-zoom { from { transform: scale(1.12); opacity: .6; } 20% { opacity: 1; } to { transform: scale(1.02); } }
+.im-marquee { animation: im-marquee 40s linear infinite; }
+#service-ticker:hover .im-marquee { animation-play-state: paused; }
+@keyframes im-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.im-flex { transition: flex .6s cubic-bezier(.22,1,.36,1); }
+.im-flex img { transition: transform .8s cubic-bezier(.22,1,.36,1); }
+.im-flex:hover img { transform: scale(1.06); }
+.im-swap { animation: im-fade .6s ease both; }
+@keyframes im-fade { from { opacity: .3; transform: scale(.985); } to { opacity: 1; transform: none; } }
+#reviews button.framer-sSLKa { transition: transform .3s ease; }
+#reviews button.framer-sSLKa:hover { transform: scale(1.08) !important; }
+#reviews .framer-1crifd7 { transition: opacity .3s ease; }
+#main a, #main button { transition: opacity .25s ease, background-color .25s ease, color .25s ease, transform .25s ease; }
+#hero a:hover, #booking button[type="submit"]:hover { transform: translateY(-2px); }
+nav[aria-label="Main navigation"] { transition: background-color .3s ease, padding .3s ease !important; }
+nav[aria-label="Main navigation"].im-nav-hidden { transform: none !important; }
+.import-faq-row[data-open="true"] .framer-1erysao, .import-service-row[data-open="true"] [data-import-service-panel] { animation: im-open .45s cubic-bezier(.22,1,.36,1) both; }
+@keyframes im-open { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .im-reveal, .im-hero, .im-kenburns, .im-marquee, .im-swap { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; filter: none !important; } }
+#lookbook.im-arc-on [data-site-import-responsive="1147"].im-arc { display: block !important; position: relative !important; height: 100vh !important; min-height: 0 !important; padding: 0 !important; }
+#lookbook.im-arc-on .im-arc figure { position: absolute !important; left: 0 !important; top: 48px !important; width: min(338px, 22.24vw) !important; max-width: none !important; transform-origin: 50% 100%; will-change: transform; transition: opacity .3s; }
+@media (max-width: 809px) { #lookbook.im-arc-on .im-arc figure { width: 180px !important; top: 32px !important; } }
+.im-word { transition: opacity .15s linear; }
